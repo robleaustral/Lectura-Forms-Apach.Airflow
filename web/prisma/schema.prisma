@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model practica {
+  id               Int       @id @default(autoincrement())
+  marca_timestamp  DateTime? @db.Timestamp(6)
+  email            String?
+  empresa          String?
+  telefono         String?
+  detalles_trabajo String?
+  ubicacion        String?
+  modalidad        String?
+  horas            String?
+  fecha_ini        DateTime? @db.Timestamp(6)
+  fecha_fin        DateTime? @db.Timestamp(6)
+  estado           String?
+  created_at       DateTime? @default(now()) @db.Timestamp(6)
+  updated_at       DateTime? @default(now()) @db.Timestamp(6)
+
+  @@unique([marca_timestamp, email, telefono], map: "unique_practica")
+}
