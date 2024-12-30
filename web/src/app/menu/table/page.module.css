@@ -1,0 +1,59 @@
+/* Estilos generales para el contenedor */
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el botón de regresar */
+  .backButton {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    border: none; /* Eliminar borde */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor a mano al pasar sobre el botón */
+    margin-bottom: 20px; /* Espaciado debajo del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+  }
+  
+  .backButton:hover {
+    background-color: #45a049; /* Color de fondo cuando el mouse pasa sobre el botón */
+  }
+  
+  /* Estilos para la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilo para los encabezados de la tabla */
+  .table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Estilo para las filas de la tabla */
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Estilo para las celdas */
+  .table td {
+    word-wrap: break-word;
+  }
+  

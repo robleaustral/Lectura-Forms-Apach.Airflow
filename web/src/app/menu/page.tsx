@@ -5,7 +5,8 @@ import styles from './page.module.css';
 export default function Home() {
   const router = useRouter();
 
-  const handleNavigation = (path) => {
+  // Especifica que 'path' es de tipo 'string'
+  const handleNavigation = (path: string) => {
     router.push(path);
   };
 
@@ -13,7 +14,7 @@ export default function Home() {
     <div className={styles.container}>
       <div
         className={styles.option}
-        onClick={() => handleNavigation('/table')}
+        onClick={() => handleNavigation('/menu/table')}
       >
         Ver Tabla
       </div>

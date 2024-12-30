@@ -4,24 +4,7 @@ import { prisma } from '@/libs/prisma';
 export async function GET(req: Request) {
   try {
     // Obtener todos los registros de la tabla 'Practica' con todas las columnas
-    const practicas = await prisma.practica.findMany({
-      select: {
-        id: true,
-        marca_timestamp: true,
-        email: true,
-        empresa: true,
-        telefono: true,
-        detalles_trabajo: true,
-        ubicacion: true,
-        modalidad: true,
-        horas: true,
-        fecha_ini: true,
-        fecha_fin: true,
-        estado: true,
-        created_at: true,
-        updated_at: true,
-      },
-    });
+    const practicas = await prisma.practicauach.findMany();
 
     // Retornar las prácticas en la respuesta JSON
     return NextResponse.json({

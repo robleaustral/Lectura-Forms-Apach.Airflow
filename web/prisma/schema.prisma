@@ -7,21 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model practica {
-  id               Int       @id @default(autoincrement())
-  marca_timestamp  DateTime? @db.Timestamp(6)
-  email            String?
-  empresa          String?
-  telefono         String?
-  detalles_trabajo String?
-  ubicacion        String?
-  modalidad        String?
-  horas            String?
-  fecha_ini        DateTime? @db.Timestamp(6)
-  fecha_fin        DateTime? @db.Timestamp(6)
-  estado           String?
-  created_at       DateTime? @default(now()) @db.Timestamp(6)
-  updated_at       DateTime? @default(now()) @db.Timestamp(6)
-
-  @@unique([marca_timestamp, email, telefono], map: "unique_practica")
+model practicauach {
+  id                                                              Int       @id @default(autoincrement())
+  created_at                                                      DateTime? @default(now()) @db.Timestamp(6)
+  updated_at                                                      DateTime? @default(now()) @db.Timestamp(6)
+  marca_temporal                                                  String?
+  nombre_del_contacto                                             String?
+  cargo_del_contacto                                              String?
+  correo_electra3nico_del_contacto                                String?
+  tela_c_fono_del_contacto                                        String?   @map("tela(c)fono_del_contacto")
+  nombre_de_la_empresa                                            String?
+  sitio_web_de_la_empresa                                         String?
+  unidad_de_la_empresa_en_donde_se_realizara__la_pra_ctica        String?   @map("unidad_de_la_empresa_en_donde_se_realizara!_la_pra!ctica")
+  fechas_aproximadas_de_realizacia3n_de_la_pra_ctica__no_olvide_i String?   @map("fechas_aproximadas_de_realizacia3n_de_la_pra!ctica_(no_olvide_i")
+  modalidad                                                       String?
+  sede_de_la_pra_ctica__solo_si_requiere_presencialidad_          String?   @map("sede_de_la_pra!ctica_(solo_si_requiere_presencialidad)")
+  ra_c_gimen_de_trabajo                                           String?   @map("ra(c)gimen_de_trabajo")
+  tema_tica_o_labores_o_desarrollar_durante_la_pra_ctica__en_lane String?   @map("tema!tica_o_labores_o_desarrollar_durante_la_pra!ctica_(en_lane")
+  beneficios_ofrecidos__aporte_econa3mico___alimentacia3n__trasla String?   @map("beneficios_ofrecidos_(aporte_econa3mico,__alimentacia3n,_trasla")
+  requisitos_especiales__estado_de_salud_compatible__contraindica String?   @map("requisitos_especiales_(estado_de_salud_compatible,_contraindica")
 }
