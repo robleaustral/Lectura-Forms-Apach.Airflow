@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>PRACTICAS </h1>
+      <h1> </h1>
       <button
         onClick={handleStart}
         className={styles.button}

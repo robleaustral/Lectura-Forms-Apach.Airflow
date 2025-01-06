@@ -20,14 +20,20 @@ export default function Home() {
         className={styles.option}
         onClick={() => handleNavigation('/menu/practicas')}
       >
-        Ver Tabla
+        Ver Prácticas
       </div>
-      {/* <div
+       <div
         className={styles.option}
-        onClick={() => handleNavigation('/manage')}
+        onClick={() => handleNavigation('/menu/practicasIniciales')}
       >
-        Gestionar Tabla
-      </div> */}
+        Práct. Iniciales
+      </div> 
+      <div
+        className={styles.option}
+        onClick={() => handleNavigation('/menu/practicasProfesionales')}
+      >
+        Práct. Prof.
+      </div> 
       <div
         className={styles.option}
         onClick={() => handleNavigation('/')}
