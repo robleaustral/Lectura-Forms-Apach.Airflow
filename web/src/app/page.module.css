@@ -8,10 +8,13 @@
 }
 
 .button {
+  font-size: 25px;
   padding: 1rem 2rem; /* px-8 py-4 */
   color: white;
   background-color: #3b82f6; /* bg-blue-500 */
-  border-radius: 0.375rem; /* rounded */
+  border-radius: 1.375rem; /* rounded */
+  width: 250px;
+  height: 150px;
   transition: background-color 0.3s ease; /* hover:bg-blue-600 transition */
 }
 

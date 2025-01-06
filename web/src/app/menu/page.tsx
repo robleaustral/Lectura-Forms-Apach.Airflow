@@ -7,6 +7,10 @@ export default function Home() {
 
   // Especifica que 'path' es de tipo 'string'
   const handleNavigation = (path: string) => {
+    // Si el path es '/menu/practicas', guardamos 'page' como 1
+    if (path === '/menu/practicas') {
+      localStorage.setItem('currentPage', '1');
+    }
     router.push(path);
   };
 
@@ -14,16 +18,16 @@ export default function Home() {
     <div className={styles.container}>
       <div
         className={styles.option}
-        onClick={() => handleNavigation('/menu/table')}
+        onClick={() => handleNavigation('/menu/practicas')}
       >
         Ver Tabla
       </div>
-      <div
+      {/* <div
         className={styles.option}
         onClick={() => handleNavigation('/manage')}
       >
         Gestionar Tabla
-      </div>
+      </div> */}
       <div
         className={styles.option}
         onClick={() => handleNavigation('/')}

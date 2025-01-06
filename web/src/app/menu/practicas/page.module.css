@@ -1,0 +1,142 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Estilos para las tarjetas */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Título de cada tarjeta */
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Fecha en cada tarjeta */
+.card p {
+  font-size: 1rem;
+  color: #555555;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Estilo para los mensajes de error */
+.error {
+  color: #ff4d4f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilo para el mensaje "No hay más páginas" */
+.noMore {
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Contenedor de la paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Estilos para los botones de paginación */
+.paginationButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.paginationButton:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.paginationButton:hover:enabled {
+  background-color: #005bb5;
+}
+/* Estilo para el botón de salir */
+.exitButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Estilo para el botón de salir */
+.exitButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s ease;
+  position: fixed; /* Fija el botón en una posición específica */
+  top: 20px; /* Alinea el botón en la parte superior */
+  right: 20px; /* Alinea el botón a la derecha */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.exitButton:hover {
+  background-color: #e03e3e;
+  transform: scale(1.05);
+}
+
+.exitButton:active {
+  background-color: #c83232;
+}
+
+/* Botón de salir deshabilitado */
+.exitButton:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
