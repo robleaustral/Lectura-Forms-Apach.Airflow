@@ -1,0 +1,9 @@
+apache-airflow==2.10.4
+chardet==4.0.0
+pandas==2.2.3
+Requests==2.32.3
+
+pip install apache-airflow==2.10.4
+pip install chardet==4.0.0
+pip install pandas==2.2.3
+pip install Requests==2.32.3

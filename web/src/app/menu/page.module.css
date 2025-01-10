@@ -1,30 +1,85 @@
-/* menu.module.css */
+/* Contenedor principal */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 1.5rem;
-    background-color: #f3f4f6; /* bg-gray-100 */
-  }
-  
+  display: flex;
+  flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  height: 100vh;
+  background-color: #f3f4f6;
+  padding: 2rem;
+}
+
+/* Contenedor del logo */
+.logoContainer {
+  margin-bottom: 2rem; /* Espacio entre el logo y las opciones del menú */
+}
+
+/* Logo */
+.logo {
+  width: 350px; /* Ajusta el tamaño del logo */
+  height: auto;
+  border-radius: 8px; /* Opcional, le da bordes redondeados */
+}
+
+/* Contenedor de las opciones del menú */
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Estilo para las opciones del menú */
+.option {
+  width: 150px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #2d2d2d; /* Fondo oscuro para efecto rústico */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 1.5rem;
+  border: 2px solid #333; /* Borde oscuro y grueso */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para agregar profundidad */
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s ease-in-out;
+  text-transform: uppercase; /* Letras en mayúsculas */
+}
+
+/* Efecto al pasar el mouse */
+.option:hover {
+  background-color: #444; /* Cambio de color de fondo a gris más oscuro */
+  transform: scale(1.1); /* Aumentar tamaño */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumentar sombra al hacer hover */
+  border-color: #555; /* Cambiar borde al hacer hover */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
   .option {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3b82f6; /* bg-blue-500 */
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+    width: 120px; /* Reducir el tamaño de las opciones */
+    height: 120px;
+    font-size: 1rem; /* Reducir tamaño de texto */
   }
-  
-  .option:hover {
-    background-color: #2563eb; /* bg-blue-600 */
-    transform: scale(1.1);
+}
+
+/* Ajustes para pantallas muy pequeñas (como celulares) */
+@media (max-width: 480px) {
+  .container {
+    gap: 1rem;
+    flex-direction: column; /* Colocar las opciones de manera vertical */
   }
-  
+
+  .option {
+    width: 100%;
+    height: 100px; /* Reducir el tamaño en pantallas más pequeñas */
+    font-size: 1.1rem; /* Ajustar el tamaño de la fuente */
+  }
+}

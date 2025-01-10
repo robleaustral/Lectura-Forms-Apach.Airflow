@@ -5,9 +5,7 @@ import styles from './page.module.css';
 export default function Home() {
   const router = useRouter();
 
-  // Especifica que 'path' es de tipo 'string'
   const handleNavigation = (path: string) => {
-    // Si el path es '/menu/practicas', guardamos 'page' como 1
     if (path === '/menu/practicas') {
       localStorage.setItem('currentPage', '1');
     }
@@ -16,29 +14,37 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles.option}
-        onClick={() => handleNavigation('/menu/practicas')}
-      >
-        Ver Prácticas
+      {/* Logo */}
+      <div className={styles.logoContainer}>
+        <img src="/robleAustral.png" alt="Logo" className={styles.logo} />
       </div>
-       <div
-        className={styles.option}
-        onClick={() => handleNavigation('/menu/practicasIniciales')}
-      >
-        Práct. Iniciales
-      </div> 
-      <div
-        className={styles.option}
-        onClick={() => handleNavigation('/menu/practicasProfesionales')}
-      >
-        Práct. Prof.
-      </div> 
-      <div
-        className={styles.option}
-        onClick={() => handleNavigation('/')}
-      >
-        Salir
+
+      {/* Opciones del menú */}
+      <div className={styles.optionsContainer}>
+        <div
+          className={styles.option}
+          onClick={() => handleNavigation('/menu/practicas')}
+        >
+          Ver Prácticas
+        </div>
+        <div
+          className={styles.option}
+          onClick={() => handleNavigation('/menu/practicasIniciales')}
+        >
+          Práct. Iniciales
+        </div>
+        <div
+          className={styles.option}
+          onClick={() => handleNavigation('/menu/practicasProfesionales')}
+        >
+          Práct. Prof.
+        </div>
+        <div
+          className={styles.option}
+          onClick={() => handleNavigation('/')}
+        >
+          Salir
+        </div>
       </div>
     </div>
   );

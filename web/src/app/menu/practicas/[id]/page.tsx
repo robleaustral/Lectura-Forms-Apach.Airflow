@@ -1,4 +1,4 @@
-import Practica from '@/app/components/Practica';
+import Practica from '@/app/components/practica';
 
 export default function PracticaPage({ params }: { params: { id: string } }) {
   const fetchUrl = 'http://localhost:3000/api/getPractica'; // URL base del fetch
