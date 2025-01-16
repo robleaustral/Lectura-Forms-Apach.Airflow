@@ -8,27 +8,33 @@ export default function Home() {
   const router = useRouter();
   const [showContent, setShowContent] = useState(false);
   const controls = useAnimation();
+  const uachControls = useAnimation();
 
   useEffect(() => {
-    // Verificar si estamos en un dispositivo móvil
-    const isMobile = window.innerWidth <= 768; 
+    const isMobile = window.innerWidth <= 768;
 
-    // Iniciar animación para el logo
+    // Animación del logo central
     controls.start({
       opacity: 1,
-      x: isMobile ? -100  : -220,  // Desplazar el logo más a la derecha en móviles
-      y: isMobile ? -100 : -200,  // Mover el logo más arriba en móviles
+      x: isMobile ? -100 : -220,
+      y: isMobile ? -100 : -200,
       scale: isMobile ? 1.8 : 0.7,
       transition: { duration: 2.5 },
     });
 
-    // Después de 2 segundos, mostrar contenido
+    // Animación del logo de la UACh
+    uachControls.start({
+      opacity: 1,
+      x: 0,
+      transition: { delay: 1.5, duration: 1.5 },
+    });
+
     const timeout = setTimeout(() => {
       setShowContent(true);
     }, 2000);
 
     return () => clearTimeout(timeout);
-  }, [controls]);
+  }, [controls, uachControls]);
 
   const handleStart = () => {
     router.push('/menu');
@@ -36,24 +42,37 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Animación del logo */}
+      {/* Animación del logo central */}
       <motion.div
         className={styles.intro}
-        initial={{ opacity: 0, x: 0, scale: 3.0 }}
+        initial={{ opacity: 0, x: 0, y: -100,scale: 3.0 }}
         animate={controls}
         transition={{ duration: 3 }}
       >
         <img
-          src="/robleAustral.png" // Cambia esta ruta al logo en tu directorio
+          src="/robleAustral.png"
           alt="Logo"
           className={styles.logo}
+        />
+      </motion.div>
+
+      {/* Logo UACh con animación */}
+      <motion.div
+        className={styles.uachLogoContainer}
+        initial={{ opacity: 0, x: 100 }}
+        animate={uachControls}
+      >
+        <img
+          src="/Uach.png"
+          alt="Logo UACh"
+          className={styles.uachLogo}
         />
       </motion.div>
 
       {/* Contenido */}
       {showContent && (
         <motion.div
-          className={`${styles.content}`}
+          className={styles.content}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}

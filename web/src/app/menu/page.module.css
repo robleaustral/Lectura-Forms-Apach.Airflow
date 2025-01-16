@@ -9,6 +9,7 @@
   height: 100vh;
   background-color: #f3f4f6;
   padding: 2rem;
+  position: relative;
 }
 
 /* Contenedor del logo */
@@ -82,4 +83,16 @@
     height: 100px; /* Reducir el tamaño en pantallas más pequeñas */
     font-size: 1.1rem; /* Ajustar el tamaño de la fuente */
   }
+}
+/* Logo UACh */
+.uachLogoContainer {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.3rem;
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.uachLogo {
+  width: 150px; /* Ajusta el tamaño del logo */
+  height: auto;
 }

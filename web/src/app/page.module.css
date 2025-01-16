@@ -4,89 +4,95 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f3f4f6; /* Color de fondo */
-  overflow: hidden; /* Para evitar que se vean barras de desplazamiento */
+  background-color: #f3f4f6;
+  overflow: hidden;
   position: relative;
   flex-direction: column;
-  padding: 20px; /* Espaciado alrededor de la pantalla */
+  padding: 20px;
 }
 
-/* Animación del logo */
+/* Animación del logo central */
 .intro {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centra el logo */
-  /* El logo comienza desde aquí */
+  transform: translate(-50%, -50%);
 }
 
-/* Logo */
 .logo {
-  width: 450px;  /* Puedes ajustar el tamaño según lo desees */
+  width: 450px;
   height: auto;
-  object-fit: contain; /* Mantiene la proporción del logo */
+  object-fit: contain;
+}
+
+/* Contenedor del logo UACh */
+.uachLogoContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.uachLogo {
+  width: 150px;
+  height: auto;
 }
 
 /* Estilos del contenido */
 .content {
-  opacity: 0; /* Empieza invisible */
+  opacity: 0;
   transition: opacity 1s ease;
   text-align: center;
   position: sticky;
   transform: translateX(-50%);
 }
 
-/* Hacemos visible el contenido */
 .content.visible {
   opacity: 1;
 }
 
-/* Estilos del botón - Estilo rústico */
+/* Botón */
 .button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #2d2d2d; /* Fondo oscuro para efecto rústico */
+  background-color: #2d2d2d;
   color: white;
-  border: 2px solid #333; /* Borde oscuro y grueso */
+  border: 2px solid #333;
   border-radius: 15px;
   margin-top: 20px;
   height: 80px;
   width: 150px;
-  text-transform: uppercase; /* Letras en mayúsculas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para agregar profundidad */
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out, transform 0.2s;
 }
 
-/* Efecto de hover en el botón */
 .button:hover {
-  background-color: #444; /* Cambio de color de fondo a gris más oscuro */
-  transform: scale(1.1); /* Aumentar tamaño */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumentar sombra al hacer hover */
-  border-color: #555; /* Cambiar borde al hacer hover */
+  background-color: #444;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border-color: #555;
 }
 
-/* Media query para hacer el diseño más responsive */
+/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Ajustar la animación y posición del logo en pantallas pequeñas */
   .intro {
-    top: 50%; /* Subir el logo más cerca de la parte superior */
-    transform: translate(20%, -20%); /* Mover el logo más a la derecha */
+    top: 50%;
+    transform: translate(-50%, -40%);
   }
 
-  /* Reducción del tamaño del logo */
   .logo {
     width: 200px;
   }
 
-  /* Ajuste de la posición del contenido */
-  .content {
-    top: 75%; /* Subir el contenido */
+  .uachLogo {
+    width: 100px;
   }
 
-  /* Tamaño más pequeño para el botón */
   .button {
-    margin-top: -500px;
     font-size: 14px;
+    height: 60px;
+    width: 120px;
   }
 }

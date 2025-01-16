@@ -14,7 +14,12 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Logo */}
+      {/* Logo UACh */}
+      <div className={styles.uachLogoContainer}>
+        <img src="/Uach.png" alt="Logo UACh" className={styles.uachLogo} />
+      </div>
+
+      {/* Logo principal */}
       <div className={styles.logoContainer}>
         <img src="/robleAustral.png" alt="Logo" className={styles.logo} />
       </div>
