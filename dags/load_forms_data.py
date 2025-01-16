@@ -154,15 +154,23 @@ def process_csv_and_insert_to_db():
     Variable.set(START_ROW_INDEX_KEY, start_row_index)
     print(f"Nuevo índice de fila: {start_row_index}")
 
-# Definición del DAG
+
+default_args = {
+    'retries': 0,
+    'owner': 'Vcntea',  # Define el propietario aquí
+}
+
 with DAG(
-    "process_csv_and_insert_to_db",
-    default_args={"retries": 0},
+    "update_Info_DB",
+    default_args=default_args,
     description="DAG para procesar un CSV e insertar datos en una base de datos",
     schedule_interval='@daily',
     start_date=datetime(2025, 1, 1),
     catchup=False,
 ) as dag:
+    # El resto de las tareas siguen igual...
+
+
     
     test_connection = PythonOperator(
         task_id="test_db_connection",

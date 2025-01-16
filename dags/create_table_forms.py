@@ -70,28 +70,10 @@ def map_column_names(**kwargs):
     
     print(f"Nombres originales de las columnas ({encoding}): {df.columns.tolist()}")
 
-    # Lista de nombres amigables en orden
-    friendly_names = [
-        'marca_temporal',
-        'tipo_practica',
-        'nombre_contacto',
-        'cargo_contacto',
-        'correo_contacto',
-        'telefono_contacto',
-        'nombre_empresa',
-        'sitio_web_empresa',
-        'unidad_empresa',
-        'fechas_practica',
-        'modalidad',
-        'sede_practica',
-        'regimen_trabajo',
-        'labores',
-        'beneficios',
-        'requisitos_especiales',
-    ]            
-    # aqui en friendly_names hay que mapear segun los nombres que se entreguen de las columnas, en la salida  de la variable nombres originales,
-    # podemos observar los nombres de las columnas, vamos escogiendo arbitrariamente y en orden nosotros los nombres que queremos despuer de ver la salida
-    # de ellos en los logs en caso de salir error en map column names.
+    # Obtener los nombres amigables desde la variable de entorno
+    friendly_names = Variable.get("FRIENDLY_NAMES", deserialize_json=True)
+    if len(friendly_names) != len(df.columns):
+        raise ValueError("La cantidad de nombres amigables no coincide con el número de columnas.")
 
     # Genera el mapeo basado en índices
     column_mapping_rules = {
@@ -101,6 +83,7 @@ def map_column_names(**kwargs):
 
     print(f"Mapping generado: {column_mapping_rules}")
     kwargs['ti'].xcom_push(key='mapped_columns', value=column_mapping_rules)
+
 
 
 
@@ -168,7 +151,7 @@ def create_table(**kwargs):
 
 
 default_args = {
-    'owner': 'Vicntea',
+    'owner': 'Vcntea',
     'retries': 0,
     'start_date': datetime(2025, 1, 1),
 }
